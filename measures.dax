@@ -1,0 +1,16 @@
+// measures.dax
+
+// Total Respondents Measure
+Total Respondents = COUNTROWS('Finance Data')
+
+// Average Age Measure
+Average Age = AVERAGE('Finance Data'[age])
+
+// Investment Distribution Measures
+Mutual Fund % = DIVIDE(
+    CALCULATE([Total Respondents], 'Finance Data'[Avenue] = "Mutual Fund"),
+    [Total Respondents],
+    0
+)
+
+// Add all other measures from previous example
